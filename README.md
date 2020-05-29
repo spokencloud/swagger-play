@@ -8,29 +8,15 @@
 Swagger Play Version | Play Version | Branch
 ---------------------| ------------ | ------
 3.0.0 | 2.8 | [master](https://github.com/swagger-api/swagger-play/tree/master)
-2.0.0 | 2.7 | [play27](https://github.com/swagger-api/swagger-play/tree/play-2.7)
-1.6.x | 2.6 | [play26](https://github.com/swagger-api/swagger-play/tree/play-2.6)
-
-Older versions are available though not anymore supported in the [archive](https://github.com/swagger-api/swagger-play/tree/archive) branch.
 
 ## Overview
+
+Forked from 
 
 This is a module to support Swagger annotations within [Play Framework](http://www.playframework.org) controllers. It is based on the library https://github.com/swagger-api/swagger-play with several improvements. This library uses Swagger 1.5 and Play 2.7. It can be used for both Scala and Java based applications.
 
 We also would like to support Swagger 2.0 in the future and contributions to that end will be gladly accepted.
 
-
-### New and Noteworthy
- 
- - Minimal dependencies: only depends on the core Play module, so it won't bring unnecessary dependencies on the Akka HTTP server or anything else from Play.
- - `SwaggerPlugin` no longer depends on on `Application`.
- - Correct `Content-Length` generation for JSON (originally proposed in https://github.com/swagger-api/swagger-play/pull/176)
- - No longer uses deprecated Play configuration methods (proposed in https://github.com/swagger-api/swagger-play/pull/162). Also uses `reference.conf` for default values.
- - Clarifies compile-time DI docs (proposed in https://github.com/swagger-api/swagger-play/pull/157)
- - Handle route delegation properly (https://github.com/swagger-api/swagger-play/pull/132 updated for Play 2.6)
- - Add support for `dataTypeClass` in `ApiImplicitParam` (https://github.com/swagger-api/swagger-play/pull/174)
- - Add support for API keys (https://github.com/swagger-api/swagger-play/pull/117)
- - Add support for OAuth2 (https://github.com/swagger-api/swagger-play/pull/183)
 
 ## Usage
 
@@ -38,7 +24,7 @@ You can depend on pre-built libraries in maven central by adding the following d
 
 ```
 libraryDependencies ++= Seq(
-  "io.swagger" %% "swagger-play2" % "3.0.1-SNAPSHOT"
+  "io.swagger" %% "swagger-play2" % "3.0.0-avaya""
 )
 ```
 
@@ -138,7 +124,3 @@ Nevertheless, the plugin can be initialized using compile time dependency inject
 val swaggerPlugin = new SwaggerPluginImpl(environment, configuration)
 lazy val apiHelpController = new ApiHelpController(controllerComponents, swaggerPlugin)
 ```
-
-## Security contact
-
-Please disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.
